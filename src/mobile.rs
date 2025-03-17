@@ -44,7 +44,7 @@ impl<R: Runtime> Androidpermissionprompt<R> {
         self.0
             .run_mobile_plugin(
                 "requestPermissions",
-                serde_json::json!({ "permissions": permissions }),
+                serde_json::json!({ "permissions": permissions }), // use of undeclared crate or module `serde_json`
             )
             .map_err(Into::into)
     }

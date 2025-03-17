@@ -13,13 +13,13 @@ pub(crate) async fn ping<R: Runtime>(
 }
 
 #[cfg(mobile)]
-use tauri::{AppHandle, Runtime};
+// use tauri::{AppHandle, Runtime};
 #[cfg(mobile)]
 use crate::models::*;
 #[cfg(mobile)]
-use crate::AndroidpermissionpromptExt;
+// use crate::AndroidpermissionpromptExt;
 #[cfg(mobile)]
-use crate::Result;
+// use crate::Result;
 
 #[cfg(mobile)]
 #[tauri::command]
@@ -41,10 +41,10 @@ pub(crate) async fn request_permissions<R: Runtime>(
 #[cfg(mobile)]
 #[tauri::command]
 pub fn request_read_audio_permission() -> bool {
-    use crate::GLOBAL_APP_HANDLE;
+    use crate::GLOBAL_APP_HANDLE; // no `GLOBAL_APP_HANDLE` in the root
     use tauri::plugin::PermissionState;
-    use tauri_plugin_androidpermissionprompt::models::PermissionType;
-    use tauri_plugin_androidpermissionprompt::YourAppExt;
+    use tauri_plugin_androidpermissionprompt::models::PermissionType; // failed to resolve: use of undeclared crate or module `tauri_plugin_androidpermissionprompt
+    use tauri_plugin_androidpermissionprompt::YourAppExt; // failed to resolve: use of undeclared crate or module `tauri_plugin_androidpermissionprompt
 
     let app = GLOBAL_APP_HANDLE
         .get()
